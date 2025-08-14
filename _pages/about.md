@@ -12,4 +12,4 @@ I am a PhD student at the [University of Hamburg](https://www.math.uni-hamburg.d
 Research Interests
 ======
 
-I am interested in structural and computational properties of (colored) link homology theories (foremost Khovanov homology) and applications in low-dimensional topology and related topics such as representation theor.
+I am interested in structural and computational properties of (colored) link homology theories (foremost Khovanov homology), their applications in low-dimensional topology and related topics such as representation theory.
