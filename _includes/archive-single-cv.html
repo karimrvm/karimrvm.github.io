@@ -29,10 +29,18 @@
     <h3 class="archive__item-title" itemprop="headline">
       {% if post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+      {% elsif post.description %}
+      {{post.description}}
       {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      {{ title }}
       {% endif %}
     </h3>
+    {% if post.arxivdate %}
+    <span class="page__date"><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> arXiv <time datetime="{{ post.arxivdate | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %Y" }}</time></span>
+    {% endif %}
+    {% if post.details %}
+    <span>{{post.details}}</span>
+    {% endif %}
     {% if post.read_time %}
       <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
