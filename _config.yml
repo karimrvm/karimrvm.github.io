@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Main page"
 title_separator          : "-"
 name                     : &name "Karim Ritter von Merkl"
-description              : &description "PhD student at the University of Hamburg"
+description              : &description "Doctoral researcher at the University of Hamburg"
 url                      : https://karimrvm.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # repo
@@ -25,7 +25,7 @@ author:
   avatar           : "personal/foto.jpg"
   name             : "Karim Ritter von Merkl"
   pronouns         : "he/him" # example: "she/her"  
-  bio              : "PhD student at the University of Hamburg"
+  bio              : "Doctoral researcher at the University of Hamburg"
   location         : "Bundesstraße 55 20146 Hamburg"
   employer         : # "University of Hamburg"
   uri              : # URL
@@ -218,28 +218,13 @@ collections:
   talks:
     output: false
     permalink: /:collection/:path/
+  conferences:
+    output: false
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
   # _teaching
   - scope:
       path: ""
@@ -258,15 +243,6 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
   # _talks
   - scope:
       path: ""
@@ -275,6 +251,14 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
 
 
 # Sass/SCSS

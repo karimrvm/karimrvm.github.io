@@ -12,7 +12,7 @@ redirect_from:
 {% include base_path %}
 
 ## Education
-* Ph.D student in Mathematics, University of Hamburg, 2023-present
+* Doctoral researcher in Mathematics, University of Hamburg, 2023-present
 * M.Sc. Mathematical Physics, University of Hamburg, 2020-2023
 * B.Sc. Computing in Science with focus physics, University of Hamburg, 2016-2020
 
@@ -39,12 +39,18 @@ redirect_from:
   {% endfor %}
 {% endif %}</div>
   
-## Talks
+## Invited talks
 
   <ul class ="cvlist">{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
+## Attended conferences
+
+ <ul class ="cvlist">{% for post in site.conferences reversed %}
+    {% include archive-single-conference-cv.html  %}
+  {% endfor %}</ul>
+
 ## Teaching
 
   <ul class ="cvlist"> {% for post in site.teaching reversed %}
