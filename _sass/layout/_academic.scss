@@ -1,0 +1,250 @@
+/* Quiet academic layout; system fonts and the existing content collections. */
+:root {
+  --global-text-color: #293735;
+  --global-text-color-light: #65716f;
+  --global-link-color: #236c67;
+  --global-link-color-hover: #184f4b;
+  --global-link-color-visited: #236c67;
+  --global-border-color: #e1e6e3;
+  --global-masthead-link-color: #394743;
+  --global-footer-bg-color: #f7f8f6;
+  --outreach-bg: #f3f7f4;
+  --global-soft-bg-color: #f7f9f7;
+}
+html[data-theme="dark"] {
+  --global-bg-color: #202725;
+  --global-text-color: #e7ede8;
+  --global-text-color-light: #afbdb4;
+  --global-link-color: #8ccbc0;
+  --global-link-color-hover: #b9e1d8;
+  --global-link-color-visited: #8ccbc0;
+  --global-border-color: #3e4c45;
+  --global-masthead-link-color: #e7ede8;
+  --global-footer-bg-color: #1a211e;
+  --outreach-bg: #29352e;
+  --global-soft-bg-color: #252e2a;
+}
+body { line-height: 1.65; }
+#main, .masthead__inner-wrap { max-width: 1160px; }
+#main { margin-top: 3em; }
+.page__title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.35em;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.9em;
+}
+.archive > h2, .conference-section > h2, .page__content > h1,
+.page__content > h2, .outreach-highlight h2 {
+  font-size: 1.15em;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 2.1em 0 0.9em;
+  padding: 0;
+  border: 0;
+}
+.page__content > h1 { font-size: 1.15em; }
+.archive .list__item { padding-right: 0; }
+ul.cvlist { list-style: none; padding: 0; margin: 0; }
+li.cvlist_item { list-style: none; }
+.archive__item-title { line-height: 1.4; font-size: 1.05em; }
+.archive__item-excerpt { font-size: 0.94em; line-height: 1.65; }
+.entry-row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  column-gap: 28px;
+  padding: 1.45em 0;
+  margin: 0;
+  border-top: 1px solid var(--global-border-color);
+}
+.entry-main { min-width: 0; }
+.entry-row .archive__item-title { margin: 0 0 0.45em; font-size: 1.02em; }
+.entry-row .entry-date {
+  font-size: 0.77em;
+  color: var(--global-text-color-light);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.65;
+  margin: 0.15em 0 0;
+}
+.date-end { display: block; }
+.entry-meta { font-size: 0.82em; line-height: 1.55; color: var(--global-text-color-light); margin: 0; }
+.entry-main .archive__item-excerpt:not(:empty) { margin-top: 0.85em; }
+.entry-main .archive__item-excerpt > :last-child { margin-bottom: 0; }
+.teaching-description ul {
+  list-style: none;
+  margin: 0.8em 0 0;
+  padding: 0;
+}
+.teaching-description li {
+  border-left: 2px solid var(--global-border-color);
+  padding-left: 0.85em;
+  margin: 0.45em 0;
+}
+.teaching-description li p { margin: 0; }
+.conference-section { margin-top: 2.6em; }
+[id] { scroll-margin-top: 100px; }
+.section-link { font-size: 0.86em; margin: 0.5em 0 1.5em; }
+.section-link a { text-underline-offset: 0.2em; }
+.outreach-highlight {
+  padding: 0;
+  margin: 2.2em 0;
+  background: transparent;
+  border: 0;
+}
+.outreach-highlight h2 { margin: 0 0 0.6em; font-size: 1.05em; }
+.outreach-highlight p { font-size: 0.94em; margin: 0; }
+.outreach-highlight a { text-underline-offset: 0.2em; }
+.job-market {
+  display: inline-block;
+  margin: 0 0 1.8em;
+  padding: 0.55em 0.9em;
+  color: var(--global-link-color);
+  background: var(--outreach-bg);
+  border-left: 3px solid var(--global-link-color);
+  font-size: 0.9em;
+  font-weight: 600;
+}
+.database-link { margin-top: 1.2em !important; }
+.database-link a {
+  font-weight: 600;
+  text-underline-offset: 0.2em;
+}
+.publicationsbox > h3 { font-size: 0.85em; color: var(--global-text-color-light); font-weight: 500; }
+.publicationsbox li { padding: 0.7em 0; border-top: 1px solid var(--global-border-color); }
+.publicationsbox .archive__item-title { margin: 0 0 0.4em; font-size: 1em; }
+.publicationsbox .page__date { margin: 0; font-size: 0.78em; color: var(--global-text-color-light); }
+.content-links { font-size: 0.8em; margin: 0.8em 0 0; }
+.publication-entry { align-items: start; }
+.publication-entry .publication-date { padding-top: 0.15em; }
+.publication-entry .publication-date .page__date {
+  margin: 0 0 0.35em;
+  color: var(--global-text-color-light);
+  font-size: 0.78em;
+  line-height: 1.55;
+}
+.publication-entry .archive__item-title { font-size: 1.08em; }
+.publication-entry .publication-note { color: var(--global-text-color-light); }
+.publication-entry .content-links a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+.publication-summary {
+  margin-top: 1em;
+  padding-top: 0.75em;
+  border-top: 1px solid var(--global-border-color);
+}
+.publication-summary .publication-abstract {
+  margin: 0;
+  color: var(--global-text-color);
+}
+.publication-summary .publication-abstract > :last-child { margin-bottom: 0; }
+.publication-figure {
+  max-width: 140px;
+  margin-top: 0.9em;
+  padding: 0.45em;
+  border: 1px solid var(--global-border-color);
+  background: var(--global-soft-bg-color);
+}
+.publication-figure .preview-image {
+  display: block;
+  width: 100%;
+  max-width: none;
+  float: none;
+  margin: 0;
+}
+.publication-abstract mjx-container[jax="CHTML"] {
+  display: inline-block !important;
+  width: auto;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+  padding-bottom: 0.2em;
+}
+.author__avatar img { border-radius: 6px; padding: 0; border: 0; max-width: 148px; }
+.sidebar .author__name { font-size: 0.92em; line-height: 1.4; margin-top: 1em; }
+.sidebar .author__bio, .sidebar .author__pronouns { font-size: 0.76em; }
+.sidebar .author__urls { font-size: 0.9em; }
+.sidebar .author__urls li { white-space: normal; }
+.sidebar .author__urls a { font-size: 0.9em; }
+.greedy-nav a[aria-current="page"] { color: var(--global-link-color); }
+.greedy-nav a[aria-current="page"]::before { transform: scaleX(1); background: var(--global-link-color); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--global-link-color); outline-offset: 4px; }
+@media (min-width: 1024px) {
+  #main { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 56px; align-items: start; }
+  #main::before, #main::after { display: none; }
+  #main > .sidebar { position: sticky; top: 100px; height: auto; width: 100%; max-width: none; padding: 0; margin: 0; overflow: visible; }
+  #main > .page, #main > .archive { float: none; width: 100%; padding: 0; margin: 0 0 3em; min-width: 0; }
+}
+@media (max-width: 1023px) {
+  #main { margin-top: 2em; }
+  #main > .page, #main > .archive { width: 100%; padding: 0; }
+  .sidebar { border-bottom: 1px solid var(--global-border-color); padding-bottom: 1.3em; margin-bottom: 1.7em; }
+  .sidebar > div[itemscope] {
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr);
+    column-gap: 15px;
+    align-items: start;
+  }
+  .author__avatar {
+    display: block;
+    grid-row: 1 / 3;
+    width: 70px;
+  }
+  .author__avatar img { max-width: 70px; }
+  .author__content {
+    display: block;
+    padding: 0;
+  }
+  .sidebar .author__name { margin-top: 0; }
+  .author__urls-wrapper {
+    display: block;
+    grid-column: 2;
+    margin-top: 0.35em;
+  }
+  .sidebar .author__urls {
+    display: flex !important;
+    position: static;
+    gap: 0.6em 1em;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .sidebar .author__urls::before,
+  .sidebar .author__urls::after { display: none; }
+  .sidebar .author__urls li { margin: 0; }
+  .sidebar .author__urls a {
+    margin: 0;
+    padding: 0;
+    font-size: 0.76em;
+  }
+}
+@media (max-width: 600px) {
+  .page__title { font-size: 2em; }
+  .sidebar > div[itemscope] { grid-template-columns: 58px minmax(0, 1fr); gap: 12px; }
+  .author__avatar { width: 58px; }
+  .author__avatar img { max-width: 58px; }
+  .entry-row { grid-template-columns: minmax(0, 1fr); gap: 0.4em; padding: 1.15em 0; }
+  .date-end { display: inline; }
+  .entry-row .entry-date { font-size: 0.8em; }
+  .publication-figure { max-width: 180px; margin-bottom: 0.6em; }
+}
+/* Keep content immediately visible during navigation. */
+#main, .masthead { animation: none; }
+
+.author-location span { min-width: 0; overflow-wrap: anywhere; }
+@media (min-width: 1024px) {
+  /* Legacy navigation JS adds inline header padding; sticky positioning now handles it. */
+  #main > .sidebar { padding-top: 0 !important; }
+  .sidebar .author__urls li.author-location {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55em;
+    font-size: 0.8em;
+  }
+  .author-location > i { flex-shrink: 0; }
+}

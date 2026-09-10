@@ -41,3 +41,28 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup"
 ;
+
+/* Shared collection entries, including compact overview lists. */
+.preview-image {
+  width: 300px;
+  max-width: 100%;
+  float: left;
+  margin-right: 10px;
+}
+.publication-abstract::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.headerlink {
+  color: inherit !important;
+  text-decoration: inherit !important;
+}
+.archive__item:hover .archive__item-title { text-decoration: none; }
+.content-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1em;
+}
+
+@import "layout/academic";
