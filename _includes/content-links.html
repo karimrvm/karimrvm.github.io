@@ -1,0 +1,12 @@
+{% comment %}Each optional link is independent; no combinations need special handling.{% endcomment %}
+{% assign item = include.item %}
+{% if item.arxiv_url or item.doi or item.paper_url or item.slides_url or item.bibtex_url or item.database_url %}
+<p class="content-links">
+  {% if item.arxiv_url %}<a href="{{ item.arxiv_url | escape }}">See on arXiv</a>{% endif %}
+  {% if item.doi %}<a href="https://doi.org/{{ item.doi | escape }}">DOI</a>{% endif %}
+  {% if item.paper_url %}<a href="{{ item.paper_url | relative_url | escape }}">Download Paper</a>{% endif %}
+  {% if item.slides_url %}<a href="{{ item.slides_url | relative_url | escape }}">Download Slides</a>{% endif %}
+  {% if item.bibtex_url %}<a href="{{ item.bibtex_url | relative_url | escape }}">Download Bibtex</a>{% endif %}
+  {% if item.database_url %}<a href="{{ item.database_url | escape }}">Database</a>{% endif %}
+</p>
+{% endif %}

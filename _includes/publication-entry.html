@@ -1,0 +1,36 @@
+{% assign item = include.item %}
+{% assign title = item.title | markdownify | remove: '<p>' | remove: '</p>' | strip %}
+{% assign title_url = item.arxiv_url %}
+{% if item.doi %}{% assign title_url = item.doi | prepend: 'https://doi.org/' %}{% endif %}
+{% if include.compact %}
+<li class="list__item">
+  <h3 class="archive__item-title">{% if title_url %}<a class="headerlink" href="{{ title_url | escape }}">{{ title }}</a>{% else %}{{ title }}{% endif %}</h3>
+  {% include publication-meta.html item=item %}
+  {% include content-links.html item=item %}
+</li>
+{% else %}
+<div class="list__item">
+  <article class="archive__item entry-row publication-entry">
+    <div class="publication-date">
+      {% include publication-meta.html item=item %}
+      {% if item.image and item.image != '' %}
+        {% assign image_url = item.image %}
+        {% unless image_url contains '://' %}{% assign image_url = image_url | prepend: '/images/' | relative_url %}{% endunless %}
+        <div class="publication-figure">{% if title_url %}<a href="{{ title_url | escape }}">{% endif %}<img src="{{ image_url | escape }}" alt="{{ item.image_alt | default: '' | escape }}" class="preview-image">{% if title_url %}</a>{% endif %}</div>
+      {% endif %}
+    </div>
+    <div class="entry-main">
+      <h2 class="archive__item-title">{% if title_url %}<a class="headerlink" href="{{ title_url | escape }}">{{ title }}</a>{% else %}{{ title }}{% endif %}</h2>
+      {% if item.content and item.content != '' %}<div class="archive__item-excerpt publication-note">{{ item.content | markdownify }}</div>{% endif %}
+      {% include content-links.html item=item %}
+      {% if item.abstract %}
+        <div class="publication-summary">
+          <div class="archive__item-excerpt publication-abstract">
+            {{ item.abstract | markdownify }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </article>
+</div>
+{% endif %}

@@ -1,0 +1,18 @@
+{% comment %}Undated manual ranks stay below automatic newest-first entries within each status.{% endcomment %}
+{% assign automatic = site.publications | where_exp: 'entry', 'entry.order == nil' | sort: 'arxiv_date' | reverse %}
+{% assign manual = site.publications | where_exp: 'entry', 'entry.order != nil' | sort: 'order' | reverse %}
+{% assign publications = automatic | concat: manual %}
+{% for category in site.publication_category %}
+  {% assign entries = publications | where: 'status', category[0] %}
+  {% if entries.size > 0 %}
+    {% if include.compact %}
+      <h3 class="archive__item-title">{{ category[1].title }}</h3>
+      <ul class="cvlist">
+      {% for entry in entries %}{% include publication-entry.html item=entry compact=true %}{% endfor %}
+      </ul>
+    {% else %}
+      <h2>{{ category[1].title }}</h2><hr>
+      {% for entry in entries %}{% include publication-entry.html item=entry %}{% endfor %}
+    {% endif %}
+  {% endif %}
+{% endfor %}

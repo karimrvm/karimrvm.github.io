@@ -1,0 +1,9 @@
+{% assign item = include.item %}
+{% if item.status == 'accepted' or item.status == 'published' %}
+<p class="page__date">
+  {% if item.status == 'accepted' %}Accepted{% else %}Published{% endif %}{% if item.journal %} in <i>{{ item.journal | escape }}</i>{% endif %}{% if item.published_date %}, <time datetime="{{ item.published_date | date: '%Y-%m-%d' }}">{{ item.published_date | date: '%B %Y' }}</time>{% endif %}
+</p>
+{% endif %}
+{% if item.arxiv_date %}
+<p class="page__date"><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> arXiv <time datetime="{{ item.arxiv_date | date: '%Y-%m-%d' }}">{{ item.arxiv_date | date: '%B %Y' }}</time></p>
+{% endif %}
