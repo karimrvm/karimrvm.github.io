@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Main page"
+title                    : "Karim Ritter von Merkl"
 title_separator          : "-"
 name                     : &name "Karim Ritter von Merkl"
-description              : &description "Doctoral researcher at the University of Hamburg"
+description              : &description "Doctoral researcher in mathematics at the University of Hamburg working on Khovanov homology, gl_N link homology, colored invariants, and categorification."
 url                      : https://karimrvm.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # repo
@@ -25,9 +25,9 @@ author:
   avatar           : "personal/foto.jpg"
   name             : "Karim Ritter von Merkl"
   pronouns         : "he/him" # example: "she/her"  
-  bio              : "Doctoral researcher at the University of Hamburg"
+  bio              : "Doctoral researcher in link homology"
   location         : "Bundesstraße 55 20146 Hamburg"
-  employer         : # "University of Hamburg"
+  employer         : "University of Hamburg"
   uri              : # URL
   email            : "nbjmup;lbsjn/sjuufs/wpo/nfslmAvoj.ibncvsh/ef" 
 
