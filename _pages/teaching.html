@@ -7,6 +7,7 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+{% assign automatic = site.teaching | where_exp: 'entry', 'entry.order == nil' | sort: 'start_year' | reverse %}
+{% assign manual = site.teaching | where_exp: 'entry', 'entry.order != nil' | sort: 'order' | reverse %}
+{% assign teaching = automatic | concat: manual %}
+{% for entry in teaching %}{% include teaching-entry.html item=entry %}{% endfor %}

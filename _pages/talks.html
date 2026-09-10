@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Talks"
+title: "Talks & Conferences"
 permalink: /talks/
 author_profile: true
 ---
@@ -11,6 +11,17 @@ author_profile: true
 
 {% endif %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+{% assign automatic = site.talks | where_exp: 'entry', 'entry.order == nil' | sort: 'date' | reverse %}
+{% assign manual = site.talks | where_exp: 'entry', 'entry.order != nil' | sort: 'order' | reverse %}
+{% assign talks = automatic | concat: manual %}
+{% for entry in talks %}{% include event-entry.html item=entry %}{% endfor %}
+
+<section class="conference-section" aria-labelledby="attended-conferences">
+<h2 id="attended-conferences">Attended conferences</h2>
+{% assign automatic = site.conferences | where_exp: 'entry', 'entry.order == nil' | sort: 'start_date' | reverse %}
+{% assign manual = site.conferences | where_exp: 'entry', 'entry.order != nil' | sort: 'order' | reverse %}
+{% assign conferences = automatic | concat: manual %}
+<ul class="cvlist">
+{% for entry in conferences %}{% include event-entry.html item=entry compact=true %}{% endfor %}
+</ul>
+</section>

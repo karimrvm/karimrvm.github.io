@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Overview"
+title: "Curriculum vitae"
 permalink: /bio/
 author_profile: true
 redirect_from:
@@ -17,48 +17,32 @@ redirect_from:
 * B.Sc. Computing in Science with focus physics, University of Hamburg, 2016-2020
 
 ## Publications
-  <div class="publicationsbox">{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h3 class = "archive__item-title">{{ category[1].title }}</h3>
-        {% assign title_shown = true %}
-      {% endunless %}
-      <ul class="cvlist">
-      {% include archive-single-cv.html %}
-      </ul>
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}</div>
-  
+<div class="publicationsbox">
+{% include publication-list.html compact=true %}
+</div>
+
+{% include outreach.html %}
+
 ## Invited talks
 
-  <ul class ="cvlist">{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-## Attended conferences
+{% assign automatic = site.talks | where_exp: 'entry', 'entry.order == nil' | sort: 'date' | reverse %}
+{% assign manual = site.talks | where_exp: 'entry', 'entry.order != nil' | sort: 'order' | reverse %}
+{% assign talks = automatic | concat: manual %}
+<ul class="cvlist">
+{% for entry in talks %}{% include event-entry.html item=entry compact=true %}{% endfor %}
+</ul>
 
- <ul class ="cvlist">{% for post in site.conferences reversed %}
-    {% include archive-single-conference-cv.html  %}
-  {% endfor %}</ul>
+<p class="section-link"><a href="{{ '/talks/#attended-conferences' | relative_url }}">Attended conferences <span aria-hidden="true">→</span></a></p>
 
 ## Teaching
 
-  <ul class ="cvlist"> {% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-## Outreach
-* {:.cvlist_item} Main organizer of the Hamburg-based venue of the high school math competition [Náboj](https://math.naboj.org) in 2024 and 2025.
+{% assign automatic = site.teaching | where_exp: 'entry', 'entry.order == nil' | sort: 'start_year' | reverse %}
+{% assign manual = site.teaching | where_exp: 'entry', 'entry.order != nil' | sort: 'order' | reverse %}
+{% assign teaching = automatic | concat: manual %}
+<ul class="cvlist">
+{% for entry in teaching %}{% include teaching-entry.html item=entry compact=true %}{% endfor %}
+</ul>
 
-## Skills
-* {:.cvlist_item} Programming: Java (basic), Python (proficient), C (basics of OpenMP and MPI)
+## Computational project
+
+[**Database of colored superpolynomials**](https://colored-kh.math.uni-hamburg.de)**.** I developed this interactive research database to accompany my work on colored Khovanov homology. The project includes the Python/Streamlit application as well as the preparation, organization, and presentation of the underlying mathematical data.

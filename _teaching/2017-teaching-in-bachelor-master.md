@@ -1,13 +1,12 @@
 ---
-title: "Exercise classes and tutorials during my bachelor's and master's"
-collection: teaching
+order: 1
+title: "Exercise classes and tutorials during my bachelor's and master's studies"
 type: "Bachelor courses"
 venue: "University of Hamburg, Departments of Computer Science/Mathematics"
-time: "2017-2023"
+start_year: 2017
+end_year: 2023
 location: "Hamburg"
-description: "Excercise classes and tutorials during bachelor's and master's"
-details: "Mathematics for Physicists, Software develepoment, Algorithms and data structures"
+overview_title: "Exercise classes and tutorials during my bachelor's and master's studies"
+summary: "Mathematics for Physicists, Software Development, Algorithms and Data Structures"
 ---
-Tasks:
-- Giving exercise classes to discuss homework for: Mathematics for Physicists 1, Software develepoment 1/2 (twice), Algorithms and data structures
-- Give tutorials for Mathematics for Physicists 1/2 (5 times)
+Led exercise classes in Mathematics for Physicists I, Software Development I/II, and Algorithms and Data Structures, as well as tutorials for Mathematics for Physicists I/II.

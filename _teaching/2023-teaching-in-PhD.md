@@ -1,13 +1,11 @@
 ---
-title: "Teaching assistance as a PhD student"
-collection: teaching
+order: 3
+title: "Teaching assistant during my PhD"
 type: "Bachelor courses"
 venue: "University of Hamburg, Department of Mathematics"
-time: "2023-present"
+start_year: 2023
+end_year: null
 location: "City, Country"
-details: "Linear algebra, Algebra"
+summary: "Linear Algebra I/II, Algebra"
 ---
-Tasks:
-A subset of {design homework sheets, write solutions for student tutors, organize exercise sessions, give tutorials, stand in for lectures if lecturer was absent} for:
-- Linear Algebra 1/2
-- Algebra
+Teaching assistant for Linear Algebra I/II and Algebra. Responsibilities included designing problem sheets and model solutions, coordinating exercise classes, teaching tutorials, and occasionally substituting for lectures.

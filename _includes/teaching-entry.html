@@ -1,0 +1,23 @@
+{% assign item = include.item %}
+{% capture period %}{{ item.start_year }}-{% if item.end_year %}{{ item.end_year }}{% else %}present{% endif %}{% endcapture %}
+{% if include.compact %}
+<li class="list__item entry-row teaching-entry">
+  <p class="entry-date">{{ period }}</p>
+  <div class="entry-main">
+    <h3 class="archive__item-title">{{ item.overview_title | default: item.title | escape }}</h3>
+    {% if item.summary %}<p class="entry-meta">{{ item.summary | escape }}</p>{% endif %}
+  </div>
+</li>
+{% else %}
+<div class="list__item">
+  <article class="archive__item entry-row teaching-entry">
+    <p class="entry-date">{{ period }}</p>
+    <div class="entry-main">
+      <h2 class="archive__item-title">{{ item.title | escape }}</h2>
+      <p class="entry-meta">{% if item.type %}{{ item.type | escape }}{% if item.venue %}, {% endif %}{% endif %}{% if item.venue %}{{ item.venue | escape }}{% endif %}</p>
+      <div class="archive__item-excerpt teaching-description">{{ item.content | markdownify }}</div>
+      {% include content-links.html item=item %}
+    </div>
+  </article>
+</div>
+{% endif %}

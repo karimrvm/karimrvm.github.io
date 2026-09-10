@@ -1,0 +1,5 @@
+{% assign outreach_variant = include.variant | default: "short" %}
+<section class="outreach-highlight" aria-labelledby="outreach">
+  <h2 id="outreach">Outreach</h2>
+  {{ site.data.outreach[outreach_variant] | markdownify }}
+</section>

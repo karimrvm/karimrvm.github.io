@@ -1,9 +1,10 @@
 ---
-title: "Mathematical prep. course Computing in Science"
-collection: teaching
+order: 2
+title: "Preparatory mathematics course for Computing in Science"
 type: "Prep. course"
 venue: "University of Hamburg, Department of Computer Science"
-time: "2018-2023"
+start_year: 2018
+end_year: 2023
 location: "City, Country"
 ---
-Plan and give a preparatory course for new bachelors students in "Computing in Science" to prepare them for Mathematics for Physicists 1/2.
+Designed and taught a preparatory mathematics course for incoming Computing in Science students, covering the material needed for Mathematics for Physicists I/II.
