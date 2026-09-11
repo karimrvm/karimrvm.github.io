@@ -1,3 +1,7 @@
+## Inhalte dieser Website aktualisieren
+
+Die [Pflegeanleitung](CONTENT_GUIDE.md) beschreibt Felder, Reihenfolge und typische Updates. Kopierbare Beispiele stehen in [content-templates](content-templates/).
+
 # Academic Pages
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 
