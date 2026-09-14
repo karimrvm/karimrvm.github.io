@@ -24,11 +24,17 @@
       {% if item.content and item.content != '' %}<div class="archive__item-excerpt publication-note">{{ item.content | markdownify }}</div>{% endif %}
       {% include content-links.html item=item %}
       {% if item.abstract %}
-        <div class="publication-summary">
+        {% assign abstract_preview = item.abstract | markdownify | strip_html | strip_newlines | truncatewords: 32 %}
+        <details class="publication-summary">
+          <summary>
+            <span class="publication-summary-label">Abstract</span>
+            <span class="publication-summary-preview">{{ abstract_preview }}</span>
+            <span class="publication-summary-toggle" aria-hidden="true"></span>
+          </summary>
           <div class="archive__item-excerpt publication-abstract">
             {{ item.abstract | markdownify }}
           </div>
-        </div>
+        </details>
       {% endif %}
     </div>
   </article>

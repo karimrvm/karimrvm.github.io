@@ -12,9 +12,20 @@ redirect_from:
 {% include base_path %}
 
 ## Education
-* Doctoral researcher in Mathematics, University of Hamburg, 2023-present
-* M.Sc. Mathematical Physics, University of Hamburg, 2020-2023
-* B.Sc. Computing in Science with focus physics, University of Hamburg, 2016-2020
+<div class="education-list">
+  <div class="education-entry">
+    <p class="education-date">2023–present</p>
+    <div><h3>Doctoral researcher in Mathematics</h3><p>University of Hamburg</p></div>
+  </div>
+  <div class="education-entry">
+    <p class="education-date">2020–2023</p>
+    <div><h3>M.Sc. Mathematical Physics</h3><p>University of Hamburg</p></div>
+  </div>
+  <div class="education-entry">
+    <p class="education-date">2016–2020</p>
+    <div><h3>B.Sc. Computing in Science with focus physics</h3><p>University of Hamburg</p></div>
+  </div>
+</div>
 
 ## Publications
 <div class="publicationsbox">
