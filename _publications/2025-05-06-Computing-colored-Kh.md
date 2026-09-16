@@ -1,7 +1,8 @@
 ---
 order: 2
 title: "Computing colored Khovanov homology"
-status: preprint
+status: accepted
+journal: Algebraic & Geometric Topology
 abstract: >-
   We compare eight versions of finite-dimensional categorifications of the colored Jones
   polynomial and show that they yield isomorphic results over a field of characteristic zero. As
