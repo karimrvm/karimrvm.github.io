@@ -11,6 +11,7 @@ author_profile: true
 
 {% endif %}
 
+<h2>Invited talks</h2>
 {% assign automatic = site.talks | where_exp: 'entry', 'entry.order == nil' | sort: 'date' | reverse %}
 {% assign manual = site.talks | where_exp: 'entry', 'entry.order != nil' | sort: 'order' | reverse %}
 {% assign talks = automatic | concat: manual %}

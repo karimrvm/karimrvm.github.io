@@ -2,14 +2,15 @@
 {% assign event_date = item.start_date | default: item.date %}
 {% if include.compact %}<li class="list__item entry-row event-entry">{% else %}<div class="list__item"><article class="archive__item entry-row event-entry">{% endif %}
   {% if event_date %}
-    <p class="entry-date"><time datetime="{{ event_date | date: '%Y-%m-%d' }}">{{ event_date | date: '%B %d, %Y' }}</time>{% if item.end_date %}<span class="date-end">– <time datetime="{{ item.end_date | date: '%Y-%m-%d' }}">{{ item.end_date | date: '%B %d, %Y' }}</time></span>{% endif %}</p>
+    <p class="entry-date"><time datetime="{{ event_date | date: '%Y-%m-%d' }}">{{ event_date | date: '%B %-d, %Y' }}</time>{% if item.end_date %}<span class="date-end">– <time datetime="{{ item.end_date | date: '%Y-%m-%d' }}">{{ item.end_date | date: '%B %-d, %Y' }}</time></span>{% endif %}</p>
   {% endif %}
   <div class="entry-main">
     {% if include.compact %}<h3 class="archive__item-title">{% else %}<h2 class="archive__item-title">{% endif %}
       {% if item.link %}<a href="{{ item.link | escape }}">{{ item.title | escape }}</a>{% else %}{{ item.title | escape }}{% endif %}
+      {% if event_date %}<span class="upcoming-label" data-upcoming-date="{{ event_date | date: '%Y-%m-%d' }}" hidden>Upcoming</span>{% endif %}
     {% if include.compact %}</h3>{% else %}</h2>{% endif %}
     {% if item.venue %}
-      <p class="entry-meta">{% if item.type %}{{ item.type | escape }}{% if include.compact %} at {% else %}, {% endif %}{% endif %}{{ item.venue | escape }}{% if item.remote %}, (remote){% endif %}</p>
+      <p class="entry-meta">{% if item.type %}{{ item.type | escape }}{% if include.compact %} at {% else %}, {% endif %}{% endif %}{{ item.venue | escape }}{% if item.remote %} (remote){% endif %}</p>
     {% endif %}
     {% unless include.compact %}<div class="archive__item-excerpt">{{ item.content | markdownify }}</div>{% endunless %}
     {% include content-links.html item=item %}
