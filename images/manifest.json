@@ -1,13 +1,13 @@
 {
-	"name": "OOjs UI icon academic-progressive",
+	"name": "Karim Ritter von Merkl",
 	"icons": [
 		{
-			"src": "/images/favicon-192x192.png",
+			"src": "/images/favicon-192x192.png?v=trefoil-3",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "/images/favicon-512x512.png",
+			"src": "/images/favicon-512x512.png?v=trefoil-3",
 			"sizes": "512x512",
 			"type": "image/png"
 		}

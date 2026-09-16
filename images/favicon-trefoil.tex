@@ -1,0 +1,31 @@
+\documentclass[tikz,border=0pt]{standalone}
+\definecolor{icongreen}{HTML}{236C67}
+% The 32px raster uses 11.5pt/16pt; the 16px raster uses 15pt/19.5pt.
+% Wider strokes keep the same curve legible at browser-tab sizes.
+\providecommand{\TrefoilStroke}{9.5pt}
+\providecommand{\GapStroke}{14pt}
+
+\begin{document}
+\begin{tikzpicture}[line cap=round,line join=round]
+  \fill[white] (0,0) circle[radius=3.35cm];
+
+  \begin{scope}[rotate=60]
+    % The center curve of the original three-strand cable.
+    \newcommand{\trefoil}[2]{%
+      plot[domain=#1:#2,samples=240,variable=\t,smooth]
+        ({sin(\t) + 2*sin(2*\t)},
+         {cos(\t) - 2*cos(2*\t)})
+    }
+
+    \draw[icongreen,line width=\TrefoilStroke] \trefoil{0}{360};
+
+    % Keep the original three overcrossings readable at favicon size.
+    \foreach \a in {15.5,135.5,255.5}{
+      \draw[white,line width=\GapStroke]
+        \trefoil{\a-3.8}{\a+3.8};
+      \draw[icongreen,line width=\TrefoilStroke]
+        \trefoil{\a-7}{\a+7};
+    }
+  \end{scope}
+\end{tikzpicture}
+\end{document}
