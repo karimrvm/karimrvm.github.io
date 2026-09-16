@@ -1,9 +1,10 @@
 ---
-order: 1
+list_last: true
 title: "Geometry of effective field theory positivity cones"
 status: published
 doi: 10.1007/s00023-026-01687-y
 journal: Annales Henri Poincaré
+published_date: 2026-04-01
 abstract: >-
   Positivity bounds are theoretical constraints on the Wilson coefficients of an effective field
   theory. These bounds emerge from the requirement that a given effective field theory must be the

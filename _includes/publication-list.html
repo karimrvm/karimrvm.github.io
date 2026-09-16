@@ -1,6 +1,7 @@
-{% comment %}Undated manual ranks stay below automatic newest-first entries within each status.{% endcomment %}
-{% assign automatic = site.publications | where_exp: 'entry', 'entry.order == nil' | sort: 'arxiv_date' | reverse %}
-{% assign manual = site.publications | where_exp: 'entry', 'entry.order != nil' | sort: 'order' | reverse %}
+{% comment %}Undated manual ranks stay below automatic newest-first entries within each status; list_last entries follow every group.{% endcomment %}
+{% assign regular = site.publications | where_exp: 'entry', 'entry.list_last != true' %}
+{% assign automatic = regular | where_exp: 'entry', 'entry.order == nil' | sort: 'arxiv_date' | reverse %}
+{% assign manual = regular | where_exp: 'entry', 'entry.order != nil' | sort: 'order' | reverse %}
 {% assign publications = automatic | concat: manual %}
 {% for category in site.publication_category %}
   {% assign entries = publications | where: 'status', category[0] %}
@@ -16,3 +17,15 @@
     {% endif %}
   {% endif %}
 {% endfor %}
+{% assign last_entries = site.publications | where_exp: 'entry', 'entry.list_last == true' | sort: 'arxiv_date' | reverse %}
+{% if last_entries.size > 0 %}
+  {% if include.compact %}
+    <h3 class="archive__item-title">Other work</h3>
+    <ul class="cvlist">
+    {% for entry in last_entries %}{% include publication-entry.html item=entry compact=true %}{% endfor %}
+    </ul>
+  {% else %}
+    <h2>Other work</h2><hr>
+    {% for entry in last_entries %}{% include publication-entry.html item=entry %}{% endfor %}
+  {% endif %}
+{% endif %}

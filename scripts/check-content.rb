@@ -38,6 +38,9 @@ required.each do |folder, fields|
       if folder == '_publications' && !%w[preprint accepted published].include?(data['status'])
         report.call('status must be preprint, accepted or published')
       end
+      if data.key?('list_last') && ![true, false].include?(data['list_last'])
+        report.call('list_last must be true or false, without quotes')
+      end
       dates = {}
       %w[date start_date end_date arxiv_date published_date].each do |key|
         next unless data.key?(key)

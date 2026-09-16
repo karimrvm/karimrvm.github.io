@@ -12,7 +12,7 @@
 <div class="list__item">
   <article class="archive__item entry-row publication-entry">
     <div class="publication-date">
-      {% include publication-meta.html item=item %}
+      <div class="publication-meta-group">{% include publication-meta.html item=item %}</div>
       {% if item.image and item.image != '' %}
         {% assign image_url = item.image %}
         {% unless image_url contains '://' %}{% assign image_url = image_url | prepend: '/images/' | relative_url %}{% endunless %}

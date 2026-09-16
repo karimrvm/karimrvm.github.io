@@ -1,5 +1,6 @@
 ---
 # order: 10 # Optional: places this entry below all entries without order; higher numbers first.
+# list_last: true # Optional exception: place this paper after every status group.
 title: "Paper title"
 status: preprint # preprint, accepted, published
 arxiv_date: 2026-01-01 # First arXiv release; newest first when order is omitted.
