@@ -5,7 +5,7 @@
   <p class="entry-date">{{ period }}</p>
   <div class="entry-main">
     <h3 class="archive__item-title">{{ item.overview_title | default: item.title | escape }}</h3>
-    {% if item.summary %}<p class="entry-meta">{{ item.summary | escape }}</p>{% endif %}
+    {% if item.content != '' %}<div class="entry-meta teaching-overview">{{ item.content | markdownify }}</div>{% endif %}
   </div>
 </li>
 {% else %}
