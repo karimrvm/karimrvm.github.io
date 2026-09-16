@@ -6,10 +6,10 @@ Die Website bleibt bei GitHub Pages und Markdown. Für Updates genügt es, die b
 
 | Inhalt | Dateien | Erscheint auf |
 | --- | --- | --- |
-| Publikationen | `_publications/*.md` | Publications und Overview |
-| Lehre | `_teaching/*.md` | Teaching und Overview |
-| Vorträge | `_talks/*.md` | Talks und Overview |
-| Konferenzteilnahmen | `_conferences/*.md` | Talks; direkter Link aus Overview |
+| Publikationen | `_publications/*.md` | Publications und CV |
+| Lehre | `_teaching/*.md` | Teaching und CV |
+| Vorträge | `_talks/*.md` | Talks und CV |
+| Konferenzteilnahmen | `_conferences/*.md` | Talks; direkter Link aus CV |
 | Startseitentext | `_pages/about.md` | Startseite |
 | Ausbildung, Computational project | `_pages/bio.md` | CV |
 | Outreach | `_data/outreach.yml` | Ausführliche Fassung auf der Startseite, kurze Fassung im CV |
@@ -30,23 +30,24 @@ published_date: 2027-06-15
 
 Die Gruppenüberschrift und Statusanzeige werden auf beiden Seiten automatisch aktualisiert. DOI nur als Kennung eingeben, ohne URL-Präfix. `arxiv_url` und `arxiv_date` bleiben erhalten. Innerhalb jeder Statusgruppe stehen zuerst alle Paper ohne `order`, nach `arxiv_date` sortiert (neueste zuerst). Darunter folgen alle Paper mit `order`, größere Zahlen zuerst. Ein Statuswechsel verschiebt das Paper in die entsprechende Gruppe, wo dieselbe Regel gilt. `published_date` verändert die Sortierung nicht.
 
-Die vorhandenen Paper wurden bei der technischen Umstellung weiterhin als `preprint` übernommen. Ihre tatsächlichen neuen Status müssen noch manuell eingetragen werden.
+Ein einzelnes Paper kann unabhängig vom Status unter allen regulären Gruppen erscheinen: `list_last: true`. Es steht dann unter „Other work“ sowohl auf Publications als auch im CV. Dieses Feld ist nur für Ausnahmen gedacht; die übrigen Paper bleiben nach Status und `order` sortiert.
 
 ### Einen Lehreintrag aktualisieren
 
-`start_year` und `end_year` enthalten Jahreszahlen. `end_year: null` bedeutet laufend und wird als `present` angezeigt. Der Zeitraum erscheint auf Teaching und Overview. Ohne `order` wird nach `start_year` sortiert, neueste zuerst. Einträge mit `order` folgen darunter, größere Zahlen zuerst.
+`start_year` und `end_year` enthalten Jahreszahlen. `end_year: null` bedeutet laufend und wird als `present` angezeigt. Der Zeitraum erscheint auf Teaching und im CV. Ohne `order` wird nach `start_year` sortiert, neueste zuerst. Einträge mit `order` folgen darunter, größere Zahlen zuerst.
 
 - `title`: Überschrift auf beiden Seiten.
 - `type`, `venue`: Art und Institution auf Teaching.
-- `summary`: optionale Kurzbeschreibung auf Overview.
-- Text unter dem zweiten `---`: ausführliche Beschreibung auf Teaching, einschließlich Listen.
-- `overview_title`: optionale abweichende Überschrift nur für Overview. Dieses Feld erhält eine bereits zuvor vorhandene Formulierung; für neue Einträge ist es normalerweise nicht nötig.
+- Text unter dem zweiten `---`: Beschreibung auf Teaching und im CV, einschließlich Listen. Änderungen müssen dadurch nur an einer Stelle erfolgen.
+- `overview_title`: optionale abweichende Überschrift nur für den CV; für neue Einträge ist es normalerweise nicht nötig.
 
-Die bestehenden `location`-Angaben wurden erhalten, werden aber weiterhin nicht angezeigt.
+`location` wird für Lehreinträge nicht benötigt; der Veranstaltungsort gehört in `venue`.
 
 ### Einen Vortrag oder eine Konferenz aktualisieren
 
 Vorträge verwenden `date`, Konferenzen `start_date` und optional `end_date`, jeweils als `YYYY-MM-DD`. Ohne `order` stehen neuere Einträge zuerst (Vorträge nach `date`, Konferenzen nach `start_date`). Einträge mit `order` folgen darunter, größere Zahlen zuerst. `title`, `type` und `venue` werden direkt angezeigt; `remote: true` ergänzt den vorhandenen Remote-Hinweis. `link` verlinkt den Titel. Bei Vorträgen erscheint Text unter dem zweiten `---` auf Talks. Konferenzen haben nur eine kompakte Ansicht ohne ausführlichen Text.
+
+Einträge mit einem zukünftigen Startdatum erhalten beim Besuch der Seite automatisch den Hinweis „Upcoming“. Am Veranstaltungstag verschwindet der Hinweis; dafür ist kein neues Deployment nötig.
 
 ## Neue Einträge
 
@@ -87,8 +88,8 @@ bundle exec jekyll build
 ## Hinweise zur technischen Umstellung
 
 - Publikationen: `category` → `status`, `arxivdate` → `arxiv_date`, `arxivurl` → `arxiv_url`, `excerpt` → `abstract`.
-- Lehre: `time` → `start_year`/`end_year`, `details` → `summary`, die vorhandene separate `description` → `overview_title`.
+- Lehre: `time` → `start_year`/`end_year`; der Text unter dem Front Matter wird für Teaching und CV gemeinsam verwendet. Die vorhandene separate `description` wurde zu `overview_title`.
 - Konferenzen: `startdate`/`enddate` → `start_date`/`end_date`.
 - Gemeinsame Vorlagen in `_includes/` erzeugen die Kurz- und Langansichten; Gestaltung liegt in `assets/css/main.scss`.
 
-Forschungsprofil, Jobsuchhinweis und redaktionelle Textkorrekturen sind nicht Teil dieser technischen Umstellung.
+Redaktionelle Textkorrekturen erfolgen nur nach gesonderter Abstimmung.
